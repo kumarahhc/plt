@@ -28,11 +28,11 @@ class TestPigLatin(unittest.TestCase):
         self.assertEqual("askay", translater.translate())
 
     #US-4
-    def test_translate_word_end_with_one_consonant(self):
+    def test_translate_word_end_with_single_consonant(self):
         translater = PigLatin("hello")
         self.assertEqual("ellohay", translater.translate())
 
     #US - 5
-    #def test_translate_word_end_with_one_consonant(self):
-    #    translater = PigLatin("hello")
-    #    self.assertEqual("ellohay", translater.translate())
+    def test_translate_word_with_more_consonant(self):
+        translater = PigLatin("known")
+        self.assertEqual("ownknay", translater.translate())

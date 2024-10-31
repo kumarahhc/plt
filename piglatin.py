@@ -17,8 +17,19 @@ class PigLatin:
             else:
                 return self.phrase + 'ay'
         else:
-            # Move the first consonant to the end and append 'ay'
-            return self.phrase[1:] + self.phrase[0] + 'ay'
+            vowels = 'aeiou'
+            first_no_of_consonant= 0
+            for i, char in enumerate(self.phrase):
+                if char not in vowels:
+                    first_no_of_consonant +=1
+                else:
+                    break
+            if first_no_of_consonant==1:
+                # Move the first consonant to the end and append 'ay'
+                return self.phrase[1:] + self.phrase[0] + 'ay'
+            elif first_no_of_consonant==2:
+                # Move the first 2 consonant to the end and append 'ay'
+                return self.phrase[2:] + self.phrase[0:2] + 'ay'
 
 
 
