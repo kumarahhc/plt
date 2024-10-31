@@ -37,8 +37,11 @@ class PigLatin:
             translated=[]
             words=self.phrase.split(" ")
             for word in words:
-                self.phrase = word
-                translated.append(self.translate())
+                if word[-1] in '!.,':
+                    self.phrase = word
+                    translated.append(self.translate()+word[-1])
+                else:
+                    translated.append(self.translate())
             return " ".join(translated)
 
 
