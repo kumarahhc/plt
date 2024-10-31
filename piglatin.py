@@ -10,9 +10,15 @@ class PigLatin:
         if self.phrase == "nil":
             return "nil"
         elif self.phrase.endswith('y'):
-            return self.phrase + 'nqy'
-        elif self.phrase[-1] in 'aeiou':
-            return self.phrase + 'yay'
+            return self.phrase + 'nay'
+        elif self.phrase[0] in 'aeiou':
+            if self.phrase[-1] in 'aeiou':
+                return self.phrase + 'yay'
+            else:
+                return self.phrase + 'ay'
         else:
-            return self.phrase
+            # Move the first consonant to the end and append 'ay'
+            return self.phrase[1:] + self.phrase[0] + 'ay'
+
+
 

@@ -16,21 +16,23 @@ class TestPigLatin(unittest.TestCase):
 
     # US-3
     def test_word_end_with_y(self):
-        translater = PigLatin("why")
-        self.assertEqual("whynqy", translater.translate())
+        translater = PigLatin("any")
+        self.assertEqual("anynay", translater.translate())
 
     def test_word_end_with_vovel_a(self):
-        translater = PigLatin("salsa")
-        self.assertEqual("salsayay", translater.translate())
+        translater = PigLatin("apple")
+        self.assertEqual("appleyay", translater.translate())
+
     def test_word_end_with_volel_e(self):
-        translater = PigLatin("salse")
-        self.assertEqual("salseyay", translater.translate())
-    def test_word_end_with_volel_i(self):
-        translater = PigLatin("salsi")
-        self.assertEqual("salsiyay", translater.translate())
-    def test_word_end_with_volel_o(self):
-        translater = PigLatin("salso")
-        self.assertEqual("salsoyay", translater.translate())
-    def test_word_end_with_volel_u(self):
-        translater = PigLatin("salsu")
-        self.assertEqual("salsuyay", translater.translate())
+        translater = PigLatin("ask")
+        self.assertEqual("askay", translater.translate())
+
+    #US-4
+    def test_translate_word_end_with_one_consonant(self):
+        translater = PigLatin("hello")
+        self.assertEqual("ellohay", translater.translate())
+
+    #US - 5
+    #def test_translate_word_end_with_one_consonant(self):
+    #    translater = PigLatin("hello")
+    #    self.assertEqual("ellohay", translater.translate())
